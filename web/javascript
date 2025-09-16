@@ -1,1 +1,26 @@
+function kwadrat() {
+  let kwadrat = document.createElement("div");
+  kwadrat.style.width = "100px";
+  kwadrat.style.height = "100px";
+  kwadrat.style.backgroundColor = "purple";
 
+  document.getElementById("kwadrat").appendChild(kwadrat);
+}
+
+kwadrat();
+
+
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Kwadrat</title>
+  
+</head>
+<body>
+    
+  <div id="kwadrat"></div>
+
+  <script src="skrypt.js"></script>
+</body>
+</html>
