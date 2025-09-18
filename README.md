@@ -1,2 +1,0 @@
-# Szkola
-Szkoła opis
