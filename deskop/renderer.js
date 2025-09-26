@@ -1,31 +1,14 @@
-document.getElementById('fileInput').addEventListener('change', function(event) {
+const fileInput = document.getElementById('fileInput');
+const audioPlayer = document.getElementById('audioPlayer');
+
+fileInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
-    
-    if (file && file.type === 'mp3/mp3') {
-        const audioPlayer = document.getElementById('audioPlayer');
-        const audioSource = document.getElementById('audioSource');
 
-        // Utwórz URL z pliku
-        const objectURL = URL.createObjectURL(file);
-        console.log("Odtwarzanie pliku:", objectURL); // Debugowanie
-
-        // Ustaw URL jako źródło dla playera
-        audioSource.src = objectURL;
-
-        // Załaduj plik i odtwórz go
-        audioPlayer.load();
+    if (file && file.type === 'audio/mpeg') {
+        const url = URL.createObjectURL(file);
+        audioPlayer.src = url;
         audioPlayer.play();
-
-        // Sprawdzenie, czy odtwarzanie się rozpoczęło
-        audioPlayer.onplay = () => {
-            console.log("Odtwarzanie rozpoczęte");
-        };
-
-        // Obsługa błędów
-        audioPlayer.onerror = () => {
-            console.error("Błąd odtwarzania pliku");
-        };
     } else {
-        alert("Proszę wybrać plik MP3.");
+        alert("Proszę wybrać plik MP3");
     }
 });
